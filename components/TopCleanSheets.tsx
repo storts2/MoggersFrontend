@@ -5,12 +5,12 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import {Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 
-export default function TopAssisters() {
+export default function TopCleanSheets() {
 
     const [players, setPlayers] = useState<Player[]>([]);
 
     useEffect(() => {
-        axios.get<Player[]>("http://localhost:8080/api/topAssisters")
+        axios.get<Player[]>("http://localhost:8080/api/topCleanSheets")
             .then(response => setPlayers(response.data))
             .catch(error => console.log(error))
     });
@@ -18,14 +18,14 @@ export default function TopAssisters() {
     return (
         <div className="bg-(--primary) rounded-lg p-4">
             <Table>
-                <TableCaption>Milton Moggers Top Assisters</TableCaption>
+                <TableCaption>Milton Moggers Top Clean Sheets</TableCaption>
                 <TableHeader>
                     <TableRow>
                         <TableHead className="text-left">First Name</TableHead>
                         <TableHead className="text-left">Last Name</TableHead>
                         <TableHead className="text-right">Player Number</TableHead>
                         <TableHead className="text-right">Player Position</TableHead>
-                        <TableHead className="text-right">Assists</TableHead>
+                        <TableHead className="text-right">Clean Sheets</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -36,7 +36,7 @@ export default function TopAssisters() {
                                 <TableCell>{player.lastName}</TableCell>
                                 <TableCell className="text-right">{player.playerNumber}</TableCell>
                                 <TableCell className="text-right">{player.playerPosition}</TableCell>
-                                <TableCell className="text-right">{player.assists}</TableCell>
+                                <TableCell className="text-right">{player.cleanSheets}</TableCell>
                             </TableRow>
                         )
                     })}
@@ -44,5 +44,4 @@ export default function TopAssisters() {
             </Table>
         </div>
     )
-
 }

@@ -1,6 +1,7 @@
 import TopAssisters from "@/components/TopAssisters";
 import PlayerList from "@/components/PlayerList"
 import TopScorers from "@/components/TopScorers"
+import TopCleanSheets from "@/components/TopCleanSheets";
 
 export default function Page() {
   return (
@@ -9,6 +10,7 @@ export default function Page() {
           <div className="flex-1 flex flex-col gap-4">
               <TopScorers/>
               <TopAssisters/>
+              <TopCleanSheets/>
           </div>
       </div>
 
