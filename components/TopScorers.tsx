@@ -1,5 +1,8 @@
 "use client"
 
+import { Player } from "@/types/Player"
+import {useEffect, useState} from "react";
+import axios from "axios";
 import {
     Table,
     TableBody,
@@ -9,29 +12,27 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
-import { Player } from "@/types/Player"
-import {useEffect, useState} from "react";
-import axios from "axios";
 
-export default function PlayerList() {
+export default function TopScorers() {
 
-    const [players, setPlayers] = useState<Player[]>([])
+    const [players, setPlayer] = useState<Player[]>([])
 
     useEffect(() => {
-        axios.get<Player[]>("http://localhost:8080/api/players")
-            .then(response => setPlayers(response.data))
+        axios.get<Player[]>("http://localhost:8080/api/topScorers")
+            .then(response => setPlayer(response.data))
             .catch(error => console.log(error))
-    })
+    });
 
     return (
         <Table>
-            <TableCaption>Milton Moggers Roster</TableCaption>
+            <TableCaption>Milton Moggers Top Scorers</TableCaption>
             <TableHeader>
                 <TableRow>
                     <TableHead className="text-left">Player Number</TableHead>
                     <TableHead className="text-left">First Name</TableHead>
                     <TableHead className="text-left">Last Name</TableHead>
                     <TableHead className="text-left">Player Position</TableHead>
+                    <TableHead className="text-right">Goals</TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
@@ -42,6 +43,7 @@ export default function PlayerList() {
                             <TableCell>{player.firstName}</TableCell>
                             <TableCell>{player.lastName}</TableCell>
                             <TableCell>{player.playerPosition}</TableCell>
+                            <TableCell className="text-right">{player.goals}</TableCell>
                         </TableRow>
                     )
                 })}

@@ -1,10 +1,14 @@
-import { Button } from "@/components/ui/button"
+
 import PlayerList from "@/components/PlayerList"
+import TopScorers from "@/components/TopScorers"
 
 export default function Page() {
   return (
-    <div>
-      <PlayerList/>
-    </div>
+
+      <div>
+        <PlayerList/>
+        <TopScorers/>
+      </div>
+
   )
 }
