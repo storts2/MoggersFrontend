@@ -3,37 +3,29 @@
 import { Player } from "@/types/Player"
 import {useEffect, useState} from "react";
 import axios from "axios";
-import {
-    Table,
-    TableBody,
-    TableCaption,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-} from "@/components/ui/table"
+import {Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 
-export default function TopScorers() {
+export default function TopAssisters() {
 
-    const [players, setPlayer] = useState<Player[]>([])
+    const [players, setPlayers] = useState<Player[]>([]);
 
     useEffect(() => {
-        axios.get<Player[]>("http://localhost:8080/api/topScorers")
-            .then(response => setPlayer(response.data))
+        axios.get<Player[]>("http://localhost:8080/api/topAssisters")
+            .then(response => setPlayers(response.data))
             .catch(error => console.log(error))
     });
 
     return (
         <div className="bg-(--primary) rounded-lg p-4">
             <Table>
-                <TableCaption>Milton Moggers Top Scorers</TableCaption>
+                <TableCaption>Milton Moggers Top Assisters</TableCaption>
                 <TableHeader>
                     <TableRow>
                         <TableHead className="text-left">First Name</TableHead>
                         <TableHead className="text-left">Last Name</TableHead>
                         <TableHead className="text-right">Player Number</TableHead>
                         <TableHead className="text-right">Player Position</TableHead>
-                        <TableHead className="text-right">Goals</TableHead>
+                        <TableHead className="text-right">Assists</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -44,7 +36,7 @@ export default function TopScorers() {
                                 <TableCell>{player.lastName}</TableCell>
                                 <TableCell className="text-right">{player.playerNumber}</TableCell>
                                 <TableCell className="text-right">{player.playerPosition}</TableCell>
-                                <TableCell className="text-right">{player.goals}</TableCell>
+                                <TableCell className="text-right">{player.assists}</TableCell>
                             </TableRow>
                         )
                     })}
@@ -53,4 +45,5 @@ export default function TopScorers() {
         </div>
 
     )
+
 }

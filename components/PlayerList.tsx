@@ -24,28 +24,30 @@ export default function PlayerList() {
     })
 
     return (
-        <Table>
-            <TableCaption>Milton Moggers Roster</TableCaption>
-            <TableHeader>
-                <TableRow>
-                    <TableHead className="text-left">Player Number</TableHead>
-                    <TableHead className="text-left">First Name</TableHead>
-                    <TableHead className="text-left">Last Name</TableHead>
-                    <TableHead className="text-left">Player Position</TableHead>
-                </TableRow>
-            </TableHeader>
-            <TableBody>
-                {players.map((player : Player) => {
-                    return (
-                        <TableRow key={player.playerId}>
-                            <TableCell>{player.playerNumber}</TableCell>
-                            <TableCell>{player.firstName}</TableCell>
-                            <TableCell>{player.lastName}</TableCell>
-                            <TableCell>{player.playerPosition}</TableCell>
-                        </TableRow>
-                    )
-                })}
-            </TableBody>
-        </Table>
+        <div className="bg-(--primary) flex-1 p-4 rounded-lg">
+            <Table>
+                <TableCaption>Milton Moggers Roster</TableCaption>
+                <TableHeader>
+                    <TableRow>
+                        <TableHead className="text-left">First Name</TableHead>
+                        <TableHead className="text-left">Last Name</TableHead>
+                        <TableHead className="text-right">Player Number</TableHead>
+                        <TableHead className="text-right">Player Position</TableHead>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
+                    {players.map((player : Player) => {
+                        return (
+                            <TableRow key={player.playerId}>
+                                <TableCell>{player.firstName}</TableCell>
+                                <TableCell>{player.lastName}</TableCell>
+                                <TableCell className="text-right">{player.playerNumber}</TableCell>
+                                <TableCell className="text-right">{player.playerPosition}</TableCell>
+                            </TableRow>
+                        )
+                    })}
+                </TableBody>
+            </Table>
+        </div>
     )
 }
