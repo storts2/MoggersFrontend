@@ -13,7 +13,7 @@ export default function TopCleanSheets() {
         axios.get<Player[]>("http://localhost:8080/api/topCleanSheets")
             .then(response => setPlayers(response.data))
             .catch(error => console.log(error))
-    });
+    },[]);
 
     return (
         <div className="bg-(--primary) rounded-lg p-4">

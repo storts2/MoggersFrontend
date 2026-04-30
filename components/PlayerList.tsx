@@ -21,7 +21,7 @@ export default function PlayerList() {
         axios.get<Player[]>("http://localhost:8080/api/players")
             .then(response => setPlayers(response.data))
             .catch(error => console.log(error))
-    })
+    },[])
 
     return (
         <div className="bg-(--primary) flex-1 p-4 rounded-lg">

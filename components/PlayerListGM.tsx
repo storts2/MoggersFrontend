@@ -12,28 +12,29 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
+import { Button } from "@/components/ui/button"
+import Link from "next/link";
 
-export default function TopScorers() {
+export default function PlayerListGM() {
 
-    const [players, setPlayer] = useState<Player[]>([])
+    const [players, setPlayers] = useState<Player[]>([])
 
     useEffect(() => {
-        axios.get<Player[]>("http://localhost:8080/api/topScorers")
-            .then(response => setPlayer(response.data))
+        axios.get<Player[]>("http://localhost:8080/api/players")
+            .then(response => setPlayers(response.data))
             .catch(error => console.log(error))
-    },[]);
+    },[])
 
     return (
-        <div className="bg-(--primary) rounded-lg p-4">
+        <div className="rounded-lg p-4">
             <Table>
-                <TableCaption>Milton Moggers Top Scorers</TableCaption>
+                <TableCaption>Milton Moggers Roster</TableCaption>
                 <TableHeader>
                     <TableRow>
                         <TableHead className="text-left">First Name</TableHead>
                         <TableHead className="text-left">Last Name</TableHead>
-                        <TableHead className="text-right">Player Number</TableHead>
-                        <TableHead className="text-right">Player Position</TableHead>
-                        <TableHead className="text-right">Goals</TableHead>
+                        <TableHead className="text-right">Player ID</TableHead>
+                        <TableHead className="text-right">Edit Player Stats</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -42,15 +43,17 @@ export default function TopScorers() {
                             <TableRow key={player.playerId}>
                                 <TableCell>{player.firstName}</TableCell>
                                 <TableCell>{player.lastName}</TableCell>
-                                <TableCell className="text-right">{player.playerNumber}</TableCell>
-                                <TableCell className="text-right">{player.playerPosition}</TableCell>
-                                <TableCell className="text-right">{player.goals}</TableCell>
+                                <TableCell className="text-right">{player.playerId}</TableCell>
+                                <TableCell className="text-right">
+                                    <Link href="/gmManagement">
+                                        <Button variant="link" className="rounded-lg p-0 h-auto">Edit</Button>
+                                    </Link>
+                                </TableCell>
                             </TableRow>
                         )
                     })}
                 </TableBody>
             </Table>
         </div>
-
     )
 }

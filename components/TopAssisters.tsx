@@ -13,7 +13,7 @@ export default function TopAssisters() {
         axios.get<Player[]>("http://localhost:8080/api/topAssisters")
             .then(response => setPlayers(response.data))
             .catch(error => console.log(error))
-    });
+    },[]);
 
     return (
         <div className="bg-(--primary) rounded-lg p-4">
