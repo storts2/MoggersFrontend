@@ -1,6 +1,6 @@
 "use client"
 
-import { Player } from "@/types/Player"
+import Player from "@/types/Player";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {
@@ -15,7 +15,12 @@ import {
 import { Button } from "@/components/ui/button"
 import Link from "next/link";
 
-export default function PlayerListGM() {
+type Props = {
+    setId: React.Dispatch<React.SetStateAction<number | undefined>>;
+    setClicked: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function PlayerListGM({setId, setClicked}: Props) {
 
     const [players, setPlayers] = useState<Player[]>([])
 
@@ -45,9 +50,10 @@ export default function PlayerListGM() {
                                 <TableCell>{player.lastName}</TableCell>
                                 <TableCell className="text-right">{player.playerId}</TableCell>
                                 <TableCell className="text-right">
-                                    <Link href="/gmManagement">
-                                        <Button variant="link" className="rounded-lg p-0 h-auto">Edit</Button>
-                                    </Link>
+                                    <Button variant="link" className="rounded-lg p-0 h-auto" onClick={() => {
+                                        setId(player.playerId);
+                                        setClicked(true);
+                                    }}>Edit</Button>
                                 </TableCell>
                             </TableRow>
                         )

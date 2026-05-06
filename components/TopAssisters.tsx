@@ -1,6 +1,6 @@
 "use client"
 
-import { Player } from "@/types/Player"
+import Player from "@/types/Player"
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";

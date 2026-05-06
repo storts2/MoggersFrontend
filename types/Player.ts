@@ -1,4 +1,4 @@
-export type Player = {
+type Player = {
     playerId : number,
     firstName : string,
     lastName : string,
@@ -9,3 +9,4 @@ export type Player = {
     playerPosition : string,
     cleanSheets : number
 }
+export default Player

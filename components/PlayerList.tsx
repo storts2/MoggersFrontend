@@ -9,7 +9,7 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
-import { Player } from "@/types/Player"
+import Player from "@/types/Player"
 import {useEffect, useState} from "react";
 import axios from "axios";
 
