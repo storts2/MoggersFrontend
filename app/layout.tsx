@@ -30,7 +30,7 @@ export default function RootLayout({
             <h1 className="text-6xl">Milton Moggers</h1>
           </div>
           <div className="flex place-items-center gap-4">
-            <Link href="/gmManagement">
+            <Link href="/logInPage">
               <Button size="lg" variant="outline" className="rounded-lg">GM Management</Button>
             </Link>
             <Button size="lg" variant="outline" className="rounded-lg">Sign In</Button>

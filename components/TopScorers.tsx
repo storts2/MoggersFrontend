@@ -18,7 +18,7 @@ export default function TopScorers() {
     const [players, setPlayer] = useState<Player[]>([])
 
     useEffect(() => {
-        axios.get<Player[]>("http://localhost:8080/api/topScorers")
+        axios.get<Player[]>("http://localhost:8080/api/public/topScorers")
             .then(response => setPlayer(response.data))
             .catch(error => console.log(error))
     },[]);

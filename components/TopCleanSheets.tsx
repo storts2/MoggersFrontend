@@ -10,7 +10,7 @@ export default function TopCleanSheets() {
     const [players, setPlayers] = useState<Player[]>([]);
 
     useEffect(() => {
-        axios.get<Player[]>("http://localhost:8080/api/topCleanSheets")
+        axios.get<Player[]>("http://localhost:8080/api/public/topCleanSheets")
             .then(response => setPlayers(response.data))
             .catch(error => console.log(error))
     },[]);

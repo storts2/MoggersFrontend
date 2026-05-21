@@ -10,7 +10,7 @@ export default function TopAssisters() {
     const [players, setPlayers] = useState<Player[]>([]);
 
     useEffect(() => {
-        axios.get<Player[]>("http://localhost:8080/api/topAssisters")
+        axios.get<Player[]>("http://localhost:8080/api/public/topAssisters")
             .then(response => setPlayers(response.data))
             .catch(error => console.log(error))
     },[]);

@@ -18,7 +18,7 @@ export default function PlayerList() {
     const [players, setPlayers] = useState<Player[]>([])
 
     useEffect(() => {
-        axios.get<Player[]>("http://localhost:8080/api/players")
+        axios.get<Player[]>("http://localhost:8080/api/public/players")
             .then(response => setPlayers(response.data))
             .catch(error => console.log(error))
     },[])
