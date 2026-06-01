@@ -30,10 +30,15 @@ export default function RootLayout({
             <h1 className="text-6xl">Milton Moggers</h1>
           </div>
           <div className="flex place-items-center gap-4">
-            <Link href="/logInPage">
-              <Button size="lg" variant="outline" className="rounded-lg">GM Management</Button>
+            <Link href="/">
+              <Button size="lg" variant="outline" className="rounded-lg">Home</Button>
             </Link>
-            <Button size="lg" variant="outline" className="rounded-lg">Sign In</Button>
+            <Link href="/matches">
+              <Button size="lg" variant="outline" className="rounded-lg">Matches</Button>
+            </Link>
+            <Link href="/players">
+              <Button size="lg" variant="outline" className="rounded-lg">Player Roster</Button>
+            </Link>
           </div>
         </header>
 
