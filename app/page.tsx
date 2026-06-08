@@ -3,17 +3,17 @@ import TeamForm from "@/components/TeamForm";
 
 export default function Page() {
     return (
-        <div>
-            <div className="flex flex-row gap-4 p-4">
+        <div className="flex flex-col min-h-screen">
+            <div className="flex-1 flex flex-row gap-4 p-4">
                 <div className="flex flex-col flex-1 gap-4">
-                    <div className="bg-(--primary) p-4 rounded-lg flex justify-center">
+                    <div className="flex-1 bg-(--primary) p-4 rounded-lg flex justify-center items-center">
                         Milton Moggers: Built Different, Built Milton!
                     </div>
-                    <div className="flex justify-center items-center gap-4">
+                    <div className="flex-1 flex justify-center items-center gap-4">
                         <img src="/images/maslLogo.png" className="w-40"/>
                         <p className="text-3xl">Division 5</p>
                     </div>
-                    <div className="bg-(--primary) p-4 rounded-lg justify-center">
+                    <div className="flex-1 bg-(--primary) p-4 rounded-lg justify-center items-center">
                         The Milton Moggers are a group of friends from Milton, Ontario who met while working together
                         at Canadian Tire and decided to take our friendship from the workplace to the soccer field.
                         What started as a few coworkers kicking a ball around quickly turned into a team built on
@@ -37,7 +37,7 @@ export default function Page() {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-row gap-4 pb-4 pl-4 pr-4">
+            <div className="flex-1 flex flex-row gap-4 pb-4 pl-4 pr-4">
                 <TeamForm/>
                 <PlayerOfWeek/>
             </div>

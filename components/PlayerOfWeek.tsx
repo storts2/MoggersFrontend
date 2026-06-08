@@ -15,7 +15,7 @@ export default function PlayerOfWeek() {
     }, []);
 
     return (
-        <div className="bg-(--primary) flex flex-col flex-1 gap-4 p-4 rounded-lg">
+        <div className="bg-(--primary) flex flex-col flex-1 gap-4 p-4 rounded-lg justify-center">
             <div className="flex flex-row justify-between">
                 <p>{player?.firstName}, {player?.lastName}</p>
                 <p>{player?.playerNumber}</p>

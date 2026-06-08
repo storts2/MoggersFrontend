@@ -14,7 +14,7 @@ export default function TeamForm() {
     }, []);
 
     return (
-        <div className="bg-(--primary) flex flex-col flex-1 gap-4 p-4 rounded-lg">
+        <div className="bg-(--primary) flex flex-col flex-1 gap-4 p-4 rounded-lg justify-center">
             <div className="flex flex-row justify-between">
                 <p>{form[0]}</p>
                 <p>{form[1]}</p>
