@@ -1,21 +1,32 @@
-# Next.js template
+# Milton Moggers Frontend
 
-This is a Next.js template with shadcn/ui.
+This is the frontend for the website that I made for my mens league soccer team. I made it useing react/next.js
 
-## Adding components
+## Header
 
-To add components to your app, run the following command:
+The header has the team logo/name as well as routing to player roster and matches plates
 
-```bash
-npx shadcn@latest add button
-```
+## Landing Page
 
-This will place the ui components in the `components` directory.
+The landing page includes:
+- Our slogan
+- The league we are in
+- An about paragraph
+- Our team form
+- A photo gallery
+- Player of the week
 
-## Using components
+## Matches Page
 
-To use the components in your app, import them as follows:
+The matches played page includes:
+- Played matches (with results)
+- Upcoming matches
+- Team stats
 
-```tsx
-import { Button } from "@/components/ui/button";
-```
+## Roster Page
+
+The roster page includes
+- Team roster (number, position, etc.)
+- Top goal scorers
+- Top assisters
+- Top clean sheets
