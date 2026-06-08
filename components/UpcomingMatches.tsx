@@ -14,6 +14,14 @@ export default function UpcomingMatches() {
             .catch(error => console.log(error))
     }, []);
 
+    if (matches.length == 0) {
+        return (
+            <div className="bg-(--primary) flex flex-1 p-4 rounded-lg justify-center items-center">
+                ...Waiting For Upcoming Matches...
+            </div>
+        )
+    }
+
     return (
         <div className="bg-(--primary) flex-1 p-4 rounded-lg">
             <Table>

@@ -8,5 +8,8 @@ type Player = {
     matchesPlayed : number,
     playerPosition : string,
     cleanSheets : number
+    yellowCards : number,
+    redCards : number,
+    playerOfWeek : boolean
 }
 export default Player
