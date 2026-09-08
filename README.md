@@ -24,10 +24,10 @@ The frontend was built with React and TypeScript and is responsible for displayi
 
 ## Getting Started
 ### Prerequisits
-- IntelliJ Idea 2025+
+- IntelliJ IDEA 2025+
 - npm
 - Next.js
-- Running instance of milton moggers backend (add link here)
+- Running instance of milton moggers backend (More information here: https://github.com/storts2/MoggersBackend/tree/master)
 ### Installation
 - Clone repository https://github.com/storts2/MoggersFrontend.git
 - Install dependencies - "npm install" in terminal
