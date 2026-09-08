@@ -3,8 +3,6 @@ I play men's league soccer every Friday with a group of friends. At the end of e
 
 In previous years, we used an Excel spreadsheet to display player and team statistics. This year, I wanted to replace the spreadsheet with a website that presents the same information in a cleaner, simpler, and more user-friendly interface.
 
-The frontend was built with React and TypeScript and is responsible for displaying player statistics, team statistics, and season information through an easy-to-navigate UI.
-
 ## Features
 - Player of the match
 - Team form
